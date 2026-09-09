@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Book Appointment | Lustre Nail Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<!-- <div class="announcement" id="announcement"><span>✨ Weekend glow: 15% off selected nail art</span><button onclick="closeAnnouncement()">×</button></div> -->
+<header class="header"><a href="index.html" class="brand"><span class="brand-mark">L</span><span>LUSTRE</span></a>
+<button class="menu-toggle" onclick="toggleMenu()">☰</button><nav class="nav" id="nav"><a href="index.html" class="">Home</a><a href="services.html" class="">Services</a><a href="gallery.html" class="">Gallery</a><a href="booking.html" class="active">Book</a><a href="about.html" class="">About</a><a href="contact.html" class="">Contact</a>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">☾</button><a href="booking.html" class="nav-cta">Book appointment ↗</a></nav></header><main>
+<section class="page-hero"><div><p class="eyebrow">RESERVE YOUR TIME</p><h1>Make time<br>for <em>you.</em></h1><p>Choose a service, date and preferred time. Live slot availability and payment will be connected to the backend later.</p></div></section>
+<section class="section"><div class="booking-layout"><div><p class="eyebrow">YOUR APPOINTMENT</p><h2>One beautiful<br><em>hour.</em></h2><p>We'll keep the experience simple: select your service, choose an available slot and confirm your details.</p><div class="booking-promise"><span>✓</span> Secure booking</div><div class="booking-promise"><span>✓</span> Live availability</div><div class="booking-promise"><span>✓</span> Online payment</div></div>
+<div class="booking-card"><div class="step"><span>01</span> Choose your service</div><div class="service-options">
+<button class="option active" data-value="Signature Nail Art"><span>Signature Nail Art</span><small>₹1,299+</small></button><button class="option" data-value="Gel Manicure"><span>Gel Manicure</span><small>₹899+</small></button><button class="option" data-value="Nail Extensions"><span>Nail Extensions</span><small>₹1,499+</small></button><button class="option" data-value="Classic Manicure"><span>Classic Manicure</span><small>₹599+</small></button></div>
+<div class="form-row"><label><span>02 · Date</span><input id="dateInput" type="date"></label><label><span>03 · Time</span><select id="timeInput"><option value="">Select a time</option><option>10:00 AM</option><option>11:30 AM</option><option>1:00 PM</option><option>2:30 PM</option><option>4:00 PM</option><option>5:30 PM</option></select></label></div>
+<div class="form-row"><label><span>Your name</span><input id="nameInput" placeholder="Enter your name"></label><label><span>Phone number</span><input placeholder="+91 XXXXX XXXXX"></label></div>
+<label><span>Anything you'd like us to know?</span><textarea rows="4" placeholder="Nail style, reference, special request..."></textarea></label>
+<button class="button full-button" onclick="submitBooking()">Continue to confirmation →</button><p class="disclaimer">Demo frontend — no real booking or payment is processed yet.</p></div></div></section>
+<div class="modal" id="confirmationModal"><div class="modal-box"><button class="modal-close" onclick="closeModal()">×</button><div class="modal-check">✓</div><p class="eyebrow">APPOINTMENT REQUEST</p><h2>You're almost <em>booked.</em></h2><p id="confirmationText"></p><button class="button full-button" onclick="closeModal()">Done</button></div></div></main><footer class="footer" id="contact"><div class="footer-top">
+<div><a href="index.html" class="brand"><span class="brand-mark">L</span><span>LUSTRE</span></a><p>Modern nail art & mindful beauty<br>in the heart of the city.</p></div>
+<div><h4>Visit</h4><p>24 Rose Avenue<br>Kolkata, West Bengal</p></div>
+<div><h4>Hours</h4><p>Mon–Sat · 10 AM–7 PM<br>Sunday · By appointment</p></div>
+<div><h4>Say hello</h4><p>+91 98765 43210<br>hello@lustrestudio.in</p></div>
+</div><div class="footer-bottom"><span>© 2026 Lustre Nail Studio</span><span>Instagram · Privacy · Terms</span></div></footer>
+<script src="js/script.js"></script></body></html>

@@ -1,0 +1,1617 @@
+<!-- <!DOCTYPE html><html lang="en" data-theme="light"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Services | Lustre Nail Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div class="announcement" id="announcement"><span>✨ Weekend glow: 15% off selected nail art</span><button onclick="closeAnnouncement()">×</button></div>
+<header class="header"><a href="index.html" class="brand"><span class="brand-mark">L</span><span>LUSTRE</span></a>
+<button class="menu-toggle" onclick="toggleMenu()">☰</button><nav class="nav" id="nav"><a href="index.html" class="">Home</a><a href="services.html" class="active">Services</a><a href="gallery.html" class="">Gallery</a><a href="booking.html" class="">Book</a><a href="about.html" class="">About</a><a href="contact.html" class="">Contact</a>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">☾</button><a href="booking.html" class="nav-cta">Book appointment ↗</a></nav></header><main>
+<section class="page-hero"><div><p class="eyebrow">OUR SERVICES</p><h1>Designed for<br><em>your style.</em></h1><p>Choose your service and let our artists take care of the details.</p></div></section>
+<section class="section"><div class="service-grid">
+<article class="service-card featured"><div class="service-icon">✦</div><span>01</span><h3>Signature Nail Art</h3><p>Custom hand-painted designs, chrome, gems and artistic details.</p><div class="service-bottom"><strong>From ₹1,299</strong><a href="booking.html">Book →</a></div></article>
+<article class="service-card"><div class="service-icon">♡</div><span>02</span><h3>Gel Manicure</h3><p>Cuticle care, shaping and a glossy long-lasting gel finish.</p><div class="service-bottom"><strong>From ₹899</strong><a href="booking.html">Book →</a></div></article>
+<article class="service-card"><div class="service-icon">◇</div><span>03</span><h3>Nail Extensions</h3><p>Elegant length with your preferred shape, finish and design.</p><div class="service-bottom"><strong>From ₹1,499</strong><a href="booking.html">Book →</a></div></article>
+<article class="service-card"><div class="service-icon">✧</div><span>04</span><h3>Classic Manicure</h3><p>A clean manicure with shaping, cuticle care and classic polish.</p><div class="service-bottom"><strong>From ₹599</strong><a href="booking.html">Book →</a></div></article></div></section>
+<section class="notice"><div class="notice-icon">★</div><div><p class="eyebrow">FIRST VISIT</p><h3>Complimentary consultation for new clients.</h3><p>We'll help you choose a shape and finish that suits you.</p></div></section></main><footer class="footer" id="contact"><div class="footer-top">
+<div><a href="index.html" class="brand"><span class="brand-mark">L</span><span>LUSTRE</span></a><p>Modern nail art & mindful beauty<br>in the heart of the city.</p></div>
+<div><h4>Visit</h4><p>24 Rose Avenue<br>Kolkata, West Bengal</p></div>
+<div><h4>Hours</h4><p>Mon–Sat · 10 AM–7 PM<br>Sunday · By appointment</p></div>
+<div><h4>Say hello</h4><p>+91 98765 43210<br>hello@lustrestudio.in</p></div>
+</div><div class="footer-bottom"><span>© 2026 Lustre Nail Studio</span><span>Instagram · Privacy · Terms</span></div></footer>
+<script src="js/script.js"></script></body></html> -->
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Services | Lustre Nail Studio</title>
+
+
+    <!-- =========================
+         GOOGLE FONTS
+    ========================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================
+         MAIN CSS
+    ========================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <!-- =========================
+         SERVICES PAGE CSS
+    ========================== -->
+
+    <style>
+
+        /* =====================================================
+           TESTIMONIAL SECTION
+        ===================================================== */
+
+        .luxury-testimonials {
+
+            position: relative;
+
+            padding: 120px 7%;
+
+            background: var(--cream);
+
+            overflow: hidden;
+        }
+
+
+        /* =====================================================
+           DECORATIVE BACKGROUND
+        ===================================================== */
+
+        .testimonial-decoration {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            opacity: .55;
+        }
+
+
+        .decoration-one {
+
+            width: 420px;
+
+            height: 420px;
+
+            right: -190px;
+
+            top: -150px;
+
+            border: 1px solid var(--accent);
+        }
+
+
+        .decoration-two {
+
+            width: 260px;
+
+            height: 260px;
+
+            left: -150px;
+
+            bottom: 40px;
+
+            background: var(--blush);
+        }
+
+
+        /* =====================================================
+           TESTIMONIAL HEADER
+        ===================================================== */
+
+        .testimonial-header {
+
+            max-width: 1150px;
+
+            margin: 0 auto 60px;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: space-between;
+
+            gap: 50px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .testimonial-header h2 {
+
+            margin: 0;
+
+            font-family: var(--serif);
+
+            font-size: clamp(
+                42px,
+                5vw,
+                68px
+            );
+
+            line-height: 1.05;
+
+            font-weight: 500;
+
+            letter-spacing: -.035em;
+        }
+
+
+        .testimonial-header h2 em {
+
+            color: var(--accent);
+
+            font-style: italic;
+        }
+
+
+        /* =====================================================
+           RATING
+        ===================================================== */
+
+        .testimonial-intro {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+            padding-bottom: 5px;
+        }
+
+
+        .rating-large {
+
+            font-family: var(--serif);
+
+            font-size: 55px;
+
+            line-height: 1;
+
+            color: var(--accent);
+        }
+
+
+        .testimonial-intro p {
+
+            margin-top: 5px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            line-height: 1.5;
+        }
+
+
+        .testimonial-intro strong {
+
+            color: var(--ink);
+        }
+
+
+        .stars {
+
+            color: var(--accent);
+
+            letter-spacing: 3px;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           TESTIMONIAL GRID
+        ===================================================== */
+
+        .luxury-testimonial-grid {
+
+            max-width: 1150px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =====================================================
+           TESTIMONIAL CARD
+        ===================================================== */
+
+        .luxury-testimonial-card {
+
+            min-height: 340px;
+
+            padding: 30px;
+
+            background: var(--card);
+
+            border: 1px solid var(--line);
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease,
+                border-color .35s ease;
+        }
+
+
+        .luxury-testimonial-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 25px 60px
+                rgba(0, 0, 0, .09);
+
+            border-color: var(--accent);
+        }
+
+
+        /* =====================================================
+           DARK CARD
+        ===================================================== */
+
+        .luxury-testimonial-card.card-dark {
+
+            background: var(--ink);
+
+            border-color: var(--ink);
+
+            color: var(--cream);
+        }
+
+
+        .luxury-testimonial-card.card-dark
+        .testimonial-text {
+
+            color: var(--cream);
+        }
+
+
+        .luxury-testimonial-card.card-dark
+        .testimonial-index {
+
+            color: #ffffff80;
+        }
+
+
+        .luxury-testimonial-card.card-dark
+        .customer {
+
+            border-color: #ffffff20;
+        }
+
+
+        .luxury-testimonial-card.card-dark
+        .customer h4 {
+
+            color: var(--cream);
+        }
+
+
+        /* =====================================================
+           ACCENT CARD
+        ===================================================== */
+
+        .luxury-testimonial-card.card-accent {
+
+            background: var(--rose);
+
+            border-color: transparent;
+        }
+
+
+        /* =====================================================
+           CARD TOP
+        ===================================================== */
+
+        .card-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        .testimonial-index {
+
+            font-size: 9px;
+
+            letter-spacing: .15em;
+
+            color: var(--muted);
+        }
+
+
+        /* =====================================================
+           LARGE QUOTE
+        ===================================================== */
+
+        .big-quote {
+
+            position: absolute;
+
+            right: 25px;
+
+            top: 45px;
+
+            font-family: var(--serif);
+
+            font-size: 85px;
+
+            line-height: .7;
+
+            color: var(--accent);
+
+            opacity: .14;
+
+            pointer-events: none;
+        }
+
+
+        /* =====================================================
+           TESTIMONIAL TEXT
+        ===================================================== */
+
+        .testimonial-text {
+
+            margin: auto 0 30px;
+
+            max-width: 310px;
+
+            font-family: var(--serif);
+
+            font-size: 21px;
+
+            line-height: 1.5;
+
+            letter-spacing: -.01em;
+
+            color: var(--ink);
+        }
+
+
+        /* =====================================================
+           CUSTOMER
+        ===================================================== */
+
+        .customer {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid var(--line);
+        }
+
+
+        .customer-avatar {
+
+            width: 43px;
+
+            height: 43px;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            display: grid;
+
+            place-items: center;
+
+            background: var(--blush);
+
+            color: var(--accent);
+
+            font-family: var(--serif);
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+
+        .customer h4 {
+
+            margin: 0 0 3px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            color: var(--ink);
+        }
+
+
+        .customer p {
+
+            margin: 0;
+
+            font-size: 9px;
+
+            color: var(--muted);
+
+            letter-spacing: .04em;
+        }
+
+
+        /* =====================================================
+           BOTTOM DECORATIVE LINE
+        ===================================================== */
+
+        .testimonial-bottom {
+
+            max-width: 1150px;
+
+            margin: 65px auto 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .testimonial-bottom p {
+
+            margin: 0;
+
+            color: var(--muted);
+
+            font-family: var(--serif);
+
+            font-size: 18px;
+
+            white-space: nowrap;
+        }
+
+
+        .testimonial-bottom em {
+
+            color: var(--accent);
+        }
+
+
+        .bottom-line {
+
+            height: 1px;
+
+            flex: 1;
+
+            max-width: 180px;
+
+            background: var(--line);
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .luxury-testimonial-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .testimonial-header {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+
+            .testimonial-intro {
+
+                padding: 0;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 680px) {
+
+            .luxury-testimonials {
+
+                padding: 80px 7%;
+            }
+
+
+            .testimonial-header {
+
+                margin-bottom: 40px;
+
+                gap: 30px;
+            }
+
+
+            .testimonial-header h2 {
+
+                font-size: 43px;
+            }
+
+
+            .luxury-testimonial-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 14px;
+            }
+
+
+            .luxury-testimonial-card {
+
+                min-height: 300px;
+
+                padding: 26px;
+            }
+
+
+            .testimonial-text {
+
+                font-size: 20px;
+            }
+
+
+            .rating-large {
+
+                font-size: 45px;
+            }
+
+
+            .testimonial-bottom {
+
+                margin-top: 45px;
+
+                gap: 12px;
+            }
+
+
+            .testimonial-bottom p {
+
+                font-size: 15px;
+            }
+
+
+            .bottom-line {
+
+                max-width: 70px;
+            }
+
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 400px) {
+
+            .testimonial-header h2 {
+
+                font-size: 38px;
+            }
+
+
+            .luxury-testimonial-card {
+
+                min-height: 280px;
+            }
+
+
+            .testimonial-text {
+
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ANNOUNCEMENT
+    ===================================================== -->
+
+    <!-- <div
+        class="announcement"
+        id="announcement"
+    >
+
+        <span>
+            ✨ Weekend glow: 15% off selected nail art
+        </span>
+
+        <button
+            onclick="closeAnnouncement()"
+        >
+            ×
+        </button>
+
+    </div> -->
+
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="header">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+
+            <span class="brand-mark">
+                L
+            </span>
+
+            <span>
+                LUSTRE
+            </span>
+
+        </a>
+
+
+        <!-- Mobile Menu -->
+
+        <button
+            class="menu-toggle"
+            onclick="toggleMenu()"
+        >
+            ☰
+        </button>
+
+
+        <nav
+            class="nav"
+            id="nav"
+        >
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a
+                href="services.html"
+                class="active"
+            >
+                Services
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="booking.html">
+                Book
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+
+            <!-- Dark Mode -->
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                onclick="toggleTheme()"
+            >
+                ☾
+            </button>
+
+
+            <a
+                href="booking.html"
+                class="nav-cta"
+            >
+                Book appointment ↗
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             PAGE HERO
+        ================================================= -->
+
+        <section class="page-hero">
+
+            <div>
+
+                <p class="eyebrow">
+                    OUR SERVICES
+                </p>
+
+                <h1>
+                    Designed for
+                    <br>
+                    <em>your style.</em>
+                </h1>
+
+                <p>
+                    Choose your service and let our artists
+                    take care of the details.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SERVICES
+        ================================================= -->
+
+        <section class="section">
+
+            <div class="service-grid">
+
+
+                <!-- =========================
+                     SERVICE 01
+                ========================== -->
+
+                <article class="service-card featured">
+
+                    <div class="service-icon">
+                        ✦
+                    </div>
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        Signature Nail Art
+                    </h3>
+
+                    <p>
+                        Custom hand-painted designs,
+                        chrome, gems and artistic details.
+                    </p>
+
+                    <div class="service-bottom">
+
+                        <strong>
+                            From ₹1,299
+                        </strong>
+
+                        <a href="booking.html">
+                            Book →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================
+                     SERVICE 02
+                ========================== -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        ♡
+                    </div>
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        Gel Manicure
+                    </h3>
+
+                    <p>
+                        Cuticle care, shaping and a glossy
+                        long-lasting gel finish.
+                    </p>
+
+                    <div class="service-bottom">
+
+                        <strong>
+                            From ₹899
+                        </strong>
+
+                        <a href="booking.html">
+                            Book →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================
+                     SERVICE 03
+                ========================== -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        ◇
+                    </div>
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        Nail Extensions
+                    </h3>
+
+                    <p>
+                        Elegant length with your preferred
+                        shape, finish and design.
+                    </p>
+
+                    <div class="service-bottom">
+
+                        <strong>
+                            From ₹1,499
+                        </strong>
+
+                        <a href="booking.html">
+                            Book →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================
+                     SERVICE 04
+                ========================== -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        ✧
+                    </div>
+
+                    <span>
+                        04
+                    </span>
+
+                    <h3>
+                        Classic Manicure
+                    </h3>
+
+                    <p>
+                        A clean manicure with shaping,
+                        cuticle care and classic polish.
+                    </p>
+
+                    <div class="service-bottom">
+
+                        <strong>
+                            From ₹599
+                        </strong>
+
+                        <a href="booking.html">
+                            Book →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             STUDIO NOTICE
+        ================================================= -->
+
+        <section class="notice">
+
+            <div class="notice-icon">
+                ★
+            </div>
+
+            <div>
+
+                <p class="eyebrow">
+                    FIRST VISIT
+                </p>
+
+                <h3>
+                    Complimentary consultation
+                    for new clients.
+                </h3>
+
+                <p>
+                    We'll help you choose a shape
+                    and finish that suits you.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             TESTIMONIALS
+        ================================================= -->
+
+        <section class="luxury-testimonials">
+
+
+            <!-- Decorative circles -->
+
+            <div
+                class="testimonial-decoration decoration-one"
+            ></div>
+
+            <div
+                class="testimonial-decoration decoration-two"
+            ></div>
+
+
+
+            <!-- =========================
+                 TESTIMONIAL HEADER
+            ========================== -->
+
+            <div class="testimonial-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        CLIENT LOVE
+                    </p>
+
+                    <h2>
+                        Loved by clients,
+                        <br>
+                        <em>made with care.</em>
+                    </h2>
+
+                </div>
+
+
+                <div class="testimonial-intro">
+
+                    <div class="rating-large">
+                        4.9
+                    </div>
+
+                    <div>
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            Average rating from
+                            <strong>
+                                300+ clients
+                            </strong>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 TESTIMONIAL GRID
+            ========================== -->
+
+            <div class="luxury-testimonial-grid">
+
+
+                <!-- =========================
+                     TESTIMONIAL 01
+                ========================== -->
+
+                <article
+                    class="luxury-testimonial-card card-dark"
+                >
+
+                    <div class="card-top">
+
+                        <span class="testimonial-index">
+                            01
+                        </span>
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                    </div>
+
+
+                    <div class="big-quote">
+                        “
+                    </div>
+
+
+                    <p class="testimonial-text">
+                        The attention to detail is unreal.
+                        I showed them one reference picture
+                        and they made it even better.
+                    </p>
+
+
+                    <div class="customer">
+
+                        <div class="customer-avatar">
+                            RS
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Riya S.
+                            </h4>
+
+                            <p>
+                                Signature Nail Art
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================
+                     TESTIMONIAL 02
+                ========================== -->
+
+                <article class="luxury-testimonial-card">
+
+                    <div class="card-top">
+
+                        <span class="testimonial-index">
+                            02
+                        </span>
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                    </div>
+
+
+                    <div class="big-quote">
+                        “
+                    </div>
+
+
+                    <p class="testimonial-text">
+                        Such a relaxing experience.
+                        My gel manicure looks beautiful
+                        and has lasted perfectly.
+                    </p>
+
+
+                    <div class="customer">
+
+                        <div class="customer-avatar">
+                            AP
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Ananya P.
+                            </h4>
+
+                            <p>
+                                Gel Manicure
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================
+                     TESTIMONIAL 03
+                ========================== -->
+
+                <article
+                    class="luxury-testimonial-card card-accent"
+                >
+
+                    <div class="card-top">
+
+                        <span class="testimonial-index">
+                            03
+                        </span>
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                    </div>
+
+
+                    <div class="big-quote">
+                        “
+                    </div>
+
+
+                    <p class="testimonial-text">
+                        The extensions are exactly what
+                        I wanted. The shape is elegant
+                        and they feel so comfortable.
+                    </p>
+
+
+                    <div class="customer">
+
+                        <div class="customer-avatar">
+                            MN
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Meera N.
+                            </h4>
+
+                            <p>
+                                Nail Extensions
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================
+                     TESTIMONIAL 04
+                ========================== -->
+
+                <article class="luxury-testimonial-card">
+
+                    <div class="card-top">
+
+                        <span class="testimonial-index">
+                            04
+                        </span>
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                    </div>
+
+
+                    <div class="big-quote">
+                        “
+                    </div>
+
+
+                    <p class="testimonial-text">
+                        Beautiful studio, lovely artist,
+                        and such a clean finish. I finally
+                        found my regular nail place.
+                    </p>
+
+
+                    <div class="customer">
+
+                        <div class="customer-avatar">
+                            SK
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Sneha K.
+                            </h4>
+
+                            <p>
+                                Classic Manicure
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================
+                     TESTIMONIAL 05
+                ========================== -->
+
+                <article
+                    class="luxury-testimonial-card card-dark"
+                >
+
+                    <div class="card-top">
+
+                        <span class="testimonial-index">
+                            05
+                        </span>
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                    </div>
+
+
+                    <div class="big-quote">
+                        “
+                    </div>
+
+
+                    <p class="testimonial-text">
+                        I absolutely loved the final result.
+                        Everything was clean, professional
+                        and the design was gorgeous.
+                    </p>
+
+
+                    <div class="customer">
+
+                        <div class="customer-avatar">
+                            PD
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Priya D.
+                            </h4>
+
+                            <p>
+                                Signature Nail Art
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================
+                     TESTIMONIAL 06
+                ========================== -->
+
+                <article class="luxury-testimonial-card">
+
+                    <div class="card-top">
+
+                        <span class="testimonial-index">
+                            06
+                        </span>
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                    </div>
+
+
+                    <div class="big-quote">
+                        “
+                    </div>
+
+
+                    <p class="testimonial-text">
+                        From booking to the appointment,
+                        everything felt so easy. My nails
+                        turned out better than I imagined.
+                    </p>
+
+
+                    <div class="customer">
+
+                        <div class="customer-avatar">
+                            TA
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Tania A.
+                            </h4>
+
+                            <p>
+                                Gel Manicure
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 BOTTOM MESSAGE
+            ========================== -->
+
+            <div class="testimonial-bottom">
+
+                <span class="bottom-line"></span>
+
+                <p>
+                    Your nails deserve a little
+                    <em>Lustre.</em>
+                </p>
+
+                <span class="bottom-line"></span>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer
+        class="footer"
+        id="contact"
+    >
+
+        <div class="footer-top">
+
+
+            <!-- Brand -->
+
+            <div>
+
+                <a
+                    href="index.html"
+                    class="brand"
+                >
+
+                    <span class="brand-mark">
+                        L
+                    </span>
+
+                    <span>
+                        LUSTRE
+                    </span>
+
+                </a>
+
+                <p>
+                    Modern nail art & mindful beauty
+                    <br>
+                    in the heart of the city.
+                </p>
+
+            </div>
+
+
+
+            <!-- Visit -->
+
+            <div>
+
+                <h4>
+                    Visit
+                </h4>
+
+                <p>
+                    24 Rose Avenue
+                    <br>
+                    Kolkata, West Bengal
+                </p>
+
+            </div>
+
+
+
+            <!-- Hours -->
+
+            <div>
+
+                <h4>
+                    Hours
+                </h4>
+
+                <p>
+                    Mon–Sat · 10 AM–7 PM
+                    <br>
+                    Sunday · By appointment
+                </p>
+
+            </div>
+
+
+
+            <!-- Contact -->
+
+            <div>
+
+                <h4>
+                    Say hello
+                </h4>
+
+                <p>
+                    +91 98765 43210
+                    <br>
+                    hello@lustrestudio.in
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Footer Bottom -->
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Lustre Nail Studio
+            </span>
+
+            <span>
+                Instagram · Privacy · Terms
+            </span>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
