@@ -265,3 +265,959 @@ html[data-theme=dark]{--ink:#f4ece8;--muted:#b9abaa;--cream:#171415;--rose:#3023
     background: var(--accent);
     color: white;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   AI PAGE — DARK MODE
+   Matches the main Lustre website dark theme
+===================================================== */
+
+html[data-theme="dark"] {
+
+    --ai-cream: #171515;
+    --ai-white: #211e1f;
+    --ai-ink: #f5f1f1;
+    --ai-muted: #b8b0b1;
+
+    --ai-accent: #d79aaa;
+    --ai-accent-dark: #bd788e;
+
+    --ai-rose: #9b6474;
+    --ai-blush: #3a292e;
+
+    --ai-gold: #c9a46d;
+
+    --ai-line: #3a3435;
+    --ai-soft: #292526;
+
+    --ai-shadow:
+        0 25px 70px rgba(0, 0, 0, .35);
+
+    --ai-shadow-small:
+        0 12px 35px rgba(0, 0, 0, .25);
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+html[data-theme="dark"] body {
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(215,154,170,.08),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(201,164,109,.05),
+            transparent 25%
+        ),
+        var(--ai-cream);
+
+    color: var(--ai-ink);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+html[data-theme="dark"] .ai-eyebrow {
+
+    background:
+        rgba(255,255,255,.04);
+
+    border-color:
+        var(--ai-line);
+
+    color:
+        var(--ai-accent);
+}
+
+
+html[data-theme="dark"] .ai-hero p {
+
+    color:
+        var(--ai-muted);
+}
+
+
+html[data-theme="dark"] .ai-hero h1 em {
+
+    color:
+        var(--ai-accent);
+}
+
+
+/* =====================================================
+   ASSISTANT WINDOW
+===================================================== */
+
+html[data-theme="dark"] .assistant-window {
+
+    background:
+        #211e1f;
+
+    border-color:
+        var(--ai-line);
+
+    box-shadow:
+        var(--ai-shadow);
+}
+
+
+html[data-theme="dark"] .assistant-header {
+
+    background:
+        #211e1f;
+
+    border-color:
+        var(--ai-line);
+}
+
+
+/* =====================================================
+   ASSISTANT PROFILE
+===================================================== */
+
+html[data-theme="dark"] .assistant-avatar {
+
+    background:
+        linear-gradient(
+            135deg,
+            #8c4b65,
+            #b9798d
+        );
+
+    color:
+        #fff;
+}
+
+
+html[data-theme="dark"] .assistant-online {
+
+    color:
+        var(--ai-muted);
+}
+
+
+html[data-theme="dark"] .assistant-label {
+
+    background:
+        var(--ai-soft);
+
+    color:
+        var(--ai-accent);
+}
+
+
+/* =====================================================
+   AI MESSAGE
+===================================================== */
+
+html[data-theme="dark"] .ai-mini-avatar {
+
+    background:
+        var(--ai-blush);
+
+    color:
+        var(--ai-accent);
+}
+
+
+html[data-theme="dark"] .ai-bubble {
+
+    background:
+        var(--ai-soft);
+
+    border-color:
+        var(--ai-line);
+
+    color:
+        var(--ai-ink);
+}
+
+
+html[data-theme="dark"] .ai-bubble strong {
+
+    color:
+        var(--ai-accent);
+}
+
+
+/* =====================================================
+   PREFERENCE SECTION
+===================================================== */
+
+html[data-theme="dark"] .preference-count {
+
+    color:
+        var(--ai-muted);
+}
+
+
+html[data-theme="dark"] .preference-card {
+
+    background:
+        #211e1f;
+
+    border-color:
+        var(--ai-line);
+}
+
+
+html[data-theme="dark"] .preference-card:hover {
+
+    border-color:
+        var(--ai-rose);
+
+    box-shadow:
+        var(--ai-shadow-small);
+}
+
+
+html[data-theme="dark"] .preference-number {
+
+    background:
+        var(--ai-soft);
+
+    color:
+        var(--ai-accent);
+}
+
+
+/* =====================================================
+   OPTION BUTTONS
+===================================================== */
+
+html[data-theme="dark"] .option-btn {
+
+    background:
+        #292526;
+
+    border-color:
+        var(--ai-line);
+
+    color:
+        var(--ai-muted);
+}
+
+
+html[data-theme="dark"] .option-btn:hover {
+
+    background:
+        #302a2c;
+
+    border-color:
+        var(--ai-accent);
+
+    color:
+        var(--ai-accent);
+}
+
+
+html[data-theme="dark"] .option-btn.selected {
+
+    background:
+        var(--ai-accent);
+
+    border-color:
+        var(--ai-accent);
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 7px 17px
+        rgba(215,154,170,.18);
+}
+
+
+/* =====================================================
+   SEARCH AREA
+===================================================== */
+
+html[data-theme="dark"] .ai-search-area {
+
+    border-color:
+        var(--ai-line);
+}
+
+
+html[data-theme="dark"] .ai-thinking-note {
+
+    color:
+        var(--ai-muted);
+}
+
+
+html[data-theme="dark"] #search-btn {
+
+    background:
+        var(--ai-accent);
+
+    color:
+        #ffffff;
+}
+
+
+html[data-theme="dark"] #search-btn:hover:not(:disabled) {
+
+    background:
+        var(--ai-accent-dark);
+}
+
+
+/* =====================================================
+   RESULTS
+===================================================== */
+
+html[data-theme="dark"] .results-eyebrow {
+
+    color:
+        var(--ai-gold);
+}
+
+
+html[data-theme="dark"] .results-top h2 em {
+
+    color:
+        var(--ai-accent);
+}
+
+
+html[data-theme="dark"] #results-note {
+
+    color:
+        var(--ai-muted);
+}
+
+
+/* =====================================================
+   DESIGN CARDS
+===================================================== */
+
+html[data-theme="dark"] .design-card {
+
+    background:
+        #211e1f;
+
+    border-color:
+        var(--ai-line);
+}
+
+
+html[data-theme="dark"] .design-card:hover {
+
+    border-color:
+        var(--ai-rose);
+
+    box-shadow:
+        0 25px 55px
+        rgba(0,0,0,.35);
+}
+
+
+/* =====================================================
+   IMAGE AREA
+===================================================== */
+
+html[data-theme="dark"] .image-wrapper {
+
+    background:
+        #292526;
+}
+
+
+/* =====================================================
+   SCORE BADGE
+===================================================== */
+
+html[data-theme="dark"] .score-badge {
+
+    background:
+        rgba(33,30,31,.95);
+
+    color:
+        var(--ai-accent);
+
+    box-shadow:
+        0 6px 20px
+        rgba(0,0,0,.25);
+}
+
+
+/* =====================================================
+   HEART
+===================================================== */
+
+html[data-theme="dark"] .heart-btn {
+
+    background:
+        rgba(33,30,31,.95);
+
+    color:
+        var(--ai-accent);
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+html[data-theme="dark"] .design-category {
+
+    color:
+        var(--ai-gold);
+}
+
+
+html[data-theme="dark"] .design-title {
+
+    color:
+        var(--ai-ink);
+}
+
+
+/* =====================================================
+   TAGS
+===================================================== */
+
+html[data-theme="dark"] .tag {
+
+    background:
+        #292526;
+
+    border-color:
+        var(--ai-line);
+
+    color:
+        var(--ai-muted);
+}
+
+
+/* =====================================================
+   CARD BUTTONS
+===================================================== */
+
+html[data-theme="dark"] .design-actions a {
+
+    border-color:
+        var(--ai-accent);
+
+    color:
+        var(--ai-accent);
+}
+
+
+html[data-theme="dark"] .design-actions a:first-child {
+
+    background:
+        var(--ai-accent);
+
+    color:
+        #ffffff;
+}
+
+
+html[data-theme="dark"] .design-actions a:hover {
+
+    background:
+        var(--ai-accent-dark);
+
+    border-color:
+        var(--ai-accent-dark);
+
+    color:
+        #ffffff;
+}
+
+
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
+
+html[data-theme="dark"] .placeholder {
+
+    color:
+        var(--ai-muted);
+}
+
+
+html[data-theme="dark"] .placeholder strong {
+
+    color:
+        var(--ai-ink);
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+html[data-theme="dark"] .empty-state {
+
+    background:
+        #211e1f;
+
+    border-color:
+        var(--ai-line);
+}
+
+
+html[data-theme="dark"] .empty-state h3 {
+
+    color:
+        var(--ai-ink);
+}
+
+
+html[data-theme="dark"] .empty-state p {
+
+    color:
+        var(--ai-muted);
+}
+
+
+/* =====================================================
+   AI INFORMATION BOX
+===================================================== */
+
+html[data-theme="dark"] .ai-info-box {
+
+    background:
+        var(--ai-soft);
+
+    border-color:
+        var(--ai-line);
+}
+
+
+html[data-theme="dark"] .ai-info-icon {
+
+    background:
+        var(--ai-blush);
+
+    color:
+        var(--ai-accent);
+}
+
+
+html[data-theme="dark"] .ai-info-title {
+
+    color:
+        var(--ai-accent);
+}
+
+
+html[data-theme="dark"] .ai-info p {
+
+    color:
+        var(--ai-muted);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   LUSTRE DESIGN ASSISTANT
+===================================================== */
+
+.design-assistant-banner {
+    position: relative;
+    margin: 0;
+    padding: 100px 7%;
+    background: var(--ink);
+    color: var(--cream);
+    overflow: hidden;
+}
+
+.design-assistant-banner::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.12);
+    right: -160px;
+    top: -180px;
+}
+
+.design-assistant-banner::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: var(--rose);
+    opacity: .12;
+    left: -130px;
+    bottom: -150px;
+}
+
+.design-assistant-content {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 180px 1fr auto;
+    align-items: center;
+    gap: 45px;
+    position: relative;
+    z-index: 2;
+}
+
+.ai-robot {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--blush);
+    font-size: 75px;
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.18),
+        inset 0 0 0 1px rgba(255,255,255,.25);
+    animation: robotFloat 3s ease-in-out infinite;
+}
+
+@keyframes robotFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+.ai-label {
+    margin: 0 0 12px;
+    color: var(--rose);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.design-assistant-content h2 {
+    margin: 0 0 16px;
+    font-family: var(--serif);
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1;
+    letter-spacing: -.035em;
+}
+
+.design-assistant-content h2 em {
+    color: var(--rose);
+    font-style: italic;
+}
+
+.design-assistant-content p {
+    max-width: 570px;
+    margin: 0;
+    color: rgba(255,255,255,.68);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.ai-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 25px;
+    background: var(--cream);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: .3s ease;
+}
+
+.ai-button:hover {
+    background: var(--rose);
+    color: var(--ink);
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   ABOUT LUSTRE CTA
+===================================================== */
+
+.about-lustre-cta {
+    padding: 100px 7%;
+    background: var(--cream);
+}
+
+.about-lustre-inner {
+    max-width: 1150px;
+    margin: auto;
+    padding: 65px;
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: var(--card);
+}
+
+.about-lustre-text .eyebrow {
+    margin-bottom: 15px;
+}
+
+.about-lustre-text h2 {
+    margin: 0 0 15px;
+    font-family: var(--serif);
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.05;
+    letter-spacing: -.03em;
+}
+
+.about-lustre-text h2 em {
+    color: var(--accent);
+    font-style: italic;
+}
+
+.about-lustre-text p {
+    max-width: 600px;
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.about-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 24px;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: .3s ease;
+}
+
+.about-button:hover {
+    background: var(--ink);
+    color: var(--cream);
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+/* 
+html[data-theme="dark"] .design-assistant-banner {
+    background: #211e1f;
+}
+
+html[data-theme="dark"] .ai-robot {
+    background: #3a292e;
+}
+
+html[data-theme="dark"] .ai-button {
+    background: var(--cream);
+    color: var(--ink);
+}
+
+html[data-theme="dark"] .ai-button:hover {
+    background: var(--rose);
+}
+
+html[data-theme="dark"] .about-lustre-cta {
+    background: var(--cream);
+}
+
+html[data-theme="dark"] .about-lustre-inner {
+    background: var(--card);
+} */
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .design-assistant-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+        gap: 30px;
+    }
+
+    .design-assistant-content p {
+        margin: auto;
+    }
+
+    .ai-robot {
+        width: 130px;
+        height: 130px;
+        font-size: 62px;
+    }
+
+    .about-lustre-inner {
+        padding: 45px 30px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .design-assistant-banner {
+        padding: 75px 7%;
+    }
+
+    .design-assistant-content h2 {
+        font-size: 42px;
+    }
+
+    .ai-robot {
+        width: 115px;
+        height: 115px;
+        font-size: 55px;
+    }
+
+    .ai-button,
+    .about-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .about-lustre-cta {
+        padding: 70px 7%;
+    }
+
+    .about-lustre-inner {
+        padding: 35px 25px;
+    }
+
+    .about-lustre-text h2 {
+        font-size: 40px;
+    }
+
+}
+
+
+
+/* =====================================================
+   DESIGN ASSISTANT — IMPROVED DARK MODE
+===================================================== */
+
+html[data-theme="dark"] .design-assistant-banner {
+    background: #181617;
+    color: #fff7f3;
+}
+
+/* Robot circle */
+html[data-theme="dark"] .ai-robot {
+    background: #3b2930;
+    border: 1px solid #b98a68;
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35),
+        0 0 35px rgba(214, 163, 130, .12);
+}
+
+/* Small heading */
+html[data-theme="dark"] .ai-label {
+    color: #e2b47c;
+}
+
+/* Main heading */
+html[data-theme="dark"] .design-assistant-content h2 {
+    color: #fff8f4;
+}
+
+html[data-theme="dark"] .design-assistant-content h2 em {
+    color: #e5a6b8;
+}
+
+/* Description */
+html[data-theme="dark"] .design-assistant-content p {
+    color: #d2c6c8;
+}
+
+/* Button */
+html[data-theme="dark"] .ai-button {
+    background: #e5b982;
+    color: #21191b;
+    border: 1px solid #e5b982;
+}
+
+html[data-theme="dark"] .ai-button:hover {
+    background: #e5a6b8;
+    border-color: #e5a6b8;
+    color: #21191b;
+}
+
+
+
+/* =====================================================
+   DESIGN ASSISTANT - LIGHT MODE
+===================================================== */
+
+html[data-theme="light"] .design-assistant-banner {
+    background: #f4e7e9 !important;
+}
+
+html[data-theme="light"] .design-assistant-banner .ai-label {
+    color: #8c4b65 !important;
+    opacity: 1 !important;
+}
+
+html[data-theme="light"] .design-assistant-banner
+.design-assistant-content h2 {
+    color: #2c2427 !important;
+}
+
+html[data-theme="light"] .design-assistant-banner
+.design-assistant-content h2 em {
+    color: #9b526b !important;
+}
+
+html[data-theme="light"] .design-assistant-banner
+.design-assistant-content > div:nth-child(2) > p:not(.ai-label) {
+    color: #65595d !important;
+    opacity: 1 !important;
+}
+
+html[data-theme="light"] .design-assistant-banner .ai-robot {
+    background: #ead0d6 !important;
+    border-color: #c58b9b !important;
+}
+
+html[data-theme="light"] .design-assistant-banner .ai-button {
+    background: #8c4b65 !important;
+    color: #ffffff !important;
+    border-color: #8c4b65 !important;
+}
