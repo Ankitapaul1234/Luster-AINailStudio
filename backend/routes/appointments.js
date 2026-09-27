@@ -1,7 +1,7 @@
 const express = require("express");
 const crypto = require("crypto");
 const { createClient } = require("@supabase/supabase-js");
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 
 const router = express.Router();
 
@@ -15,24 +15,33 @@ const supabase = createClient(
 );
 
 /* =====================================================
-   GMAIL SMTP
+   RESEND
 ===================================================== */
 
-const transporter = nodemailer.createTransport({
-    service: "gmail",
+const resend = new Resend(
+    process.env.RESEND_API_KEY
+);
 
-    auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD
-    }
-});
+/*
+   IMPORTANT:
+   If you have a verified domain in Resend,
+   use something like:
 
+   Lustre Nail Studio <booking@yourdomain.com>
+
+   For testing without a verified domain, you can use
+   the sender address allowed by your Resend account.
+*/
+
+const FROM_EMAIL =
+    process.env.RESEND_FROM_EMAIL ||
+    "Lustre Nail Studio <onboarding@resend.dev>";
 
 /* =====================================================
    CREATE APPOINTMENT
    -----------------------------------------------------
-   This route is kept for compatibility.
-   Your current booking.html does NOT need to use it.
+   Compatibility route.
+   Current booking.html does NOT need to use it.
 ===================================================== */
 
 router.post("/create", async (req, res) => {
@@ -101,51 +110,48 @@ router.post("/create", async (req, res) => {
            SAVE APPOINTMENT
         ----------------------------- */
 
-        const { data, error } = await supabase
+        const { data, error } =
+            await supabase
+                .from("appointments")
+                .insert({
 
-            .from("appointments")
+                    customer_name,
 
-            .insert({
+                    phone,
 
-                customer_name,
+                    email:
+                        email || null,
 
-                phone,
+                    service,
 
-                email:
-                    email || null,
+                    appointment_date,
 
-                service,
+                    appointment_time,
 
-                appointment_date,
+                    special_request:
+                        special_request || null,
 
-                appointment_time,
+                    payment_method:
+                        payment_method || "none",
 
-                special_request:
-                    special_request || null,
+                    payment_status:
+                        payment_status || "not_required",
 
-                payment_method:
-                    payment_method || "none",
+                    booking_id:
+                        bookingId,
 
-                payment_status:
-                    payment_status || "not_required",
+                    booking_status:
+                        "pending",
 
-                booking_id:
-                    bookingId,
+                    owner_action_token:
+                        ownerActionToken,
 
-                booking_status:
-                    "pending",
+                    customer_status_token:
+                        customerStatusToken
 
-                owner_action_token:
-                    ownerActionToken,
-
-                customer_status_token:
-                    customerStatusToken
-
-            })
-
-            .select()
-
-            .single();
+                })
+                .select()
+                .single();
 
 
         if (error) {
@@ -252,12 +258,8 @@ router.post("/create", async (req, res) => {
 /* =====================================================
    NOTIFY OWNER FOR EXISTING APPOINTMENT
 
-   IMPORTANT:
-   Your current booking.html already creates the
-   appointment directly in Supabase.
-
-   This route takes that existing appointment ID,
-   generates the secure tokens and sends the owner email.
+   Current booking.html creates the appointment directly
+   in Supabase and then calls this route.
 ===================================================== */
 
 router.post("/notify", async (req, res) => {
@@ -338,7 +340,6 @@ router.post("/notify", async (req, res) => {
                 "Appointment already has secure tokens:",
                 appointment.booking_id
             );
-
 
             return res.json({
 
@@ -520,7 +521,7 @@ router.post("/notify", async (req, res) => {
 
 
 /* =====================================================
-   SEND OWNER EMAIL
+   SEND OWNER EMAIL USING RESEND
 ===================================================== */
 
 async function sendOwnerEmail(appointment) {
@@ -554,17 +555,17 @@ async function sendOwnerEmail(appointment) {
 
 
         /* -----------------------------
-           SEND EMAIL USING GMAIL
+           SEND EMAIL USING RESEND
         ----------------------------- */
 
         const emailResponse =
-            await transporter.sendMail({
+            await resend.emails.send({
 
                 from:
-                    `Lustre Nail Studio <${process.env.GMAIL_USER}>`,
+                    FROM_EMAIL,
 
                 to:
-                    process.env.OWNER_EMAIL,
+                    [process.env.OWNER_EMAIL],
 
                 subject:
                     `New Appointment Request - ${booking_id}`,
@@ -585,14 +586,12 @@ Lustre Nail Studio Appointment
 
 </head>
 
-
 <body style="
     margin:0;
     padding:30px;
     background:#f8f3ef;
     font-family:Arial,sans-serif;
 ">
-
 
 <div style="
     max-width:600px;
@@ -601,7 +600,6 @@ Lustre Nail Studio Appointment
     padding:30px;
     border-radius:12px;
 ">
-
 
 <h2 style="
     color:#4a2732;
@@ -612,81 +610,66 @@ Lustre Nail Studio
 
 </h2>
 
-
 <h3>
 New Appointment Request
 </h3>
-
 
 <p>
 A new customer has requested an appointment.
 </p>
 
-
 <hr>
-
 
 <p>
 <strong>Booking ID:</strong>
 ${booking_id}
 </p>
 
-
 <p>
 <strong>Customer:</strong>
 ${customer_name}
 </p>
-
 
 <p>
 <strong>Phone:</strong>
 ${phone}
 </p>
 
-
 <p>
 <strong>Email:</strong>
 ${email || "Not provided"}
 </p>
-
 
 <p>
 <strong>Service:</strong>
 ${service}
 </p>
 
-
 <p>
 <strong>Date:</strong>
 ${appointment_date}
 </p>
-
 
 <p>
 <strong>Time:</strong>
 ${appointment_time}
 </p>
 
-
 <p>
 <strong>Payment:</strong>
 ${payment_method || "None"}
 </p>
-
 
 <p>
 <strong>Special Request:</strong>
 ${special_request || "No additional request"}
 </p>
 
-
 <br>
-
 
 <div style="
     text-align:center;
 ">
-
 
 <a
     href="${acceptUrl}"
@@ -704,7 +687,6 @@ ${special_request || "No additional request"}
     ACCEPT APPOINTMENT
 </a>
 
-
 <a
     href="${rejectUrl}"
     style="
@@ -721,12 +703,9 @@ ${special_request || "No additional request"}
     REJECT APPOINTMENT
 </a>
 
-
 </div>
 
-
 <br>
-
 
 <p style="
     font-size:13px;
@@ -736,7 +715,6 @@ ${special_request || "No additional request"}
 You can use the buttons above to update this appointment.
 
 </p>
-
 
 <p style="
     font-size:13px;
@@ -748,9 +726,7 @@ ${booking_id}
 
 </p>
 
-
 </div>
-
 
 </body>
 
@@ -767,12 +743,32 @@ ${booking_id}
         );
 
 
+        if (emailResponse.error) {
+
+            console.error(
+                "Resend owner email error:",
+                emailResponse.error
+            );
+
+            return {
+
+                success: false,
+
+                error:
+                    emailResponse.error.message ||
+                    JSON.stringify(emailResponse.error)
+
+            };
+
+        }
+
+
         return {
 
             success: true,
 
             data:
-                emailResponse
+                emailResponse.data
 
         };
 
@@ -781,7 +777,7 @@ ${booking_id}
     catch (error) {
 
         console.error(
-            "Gmail owner email error:",
+            "Resend owner email error:",
             error
         );
 
@@ -800,10 +796,9 @@ ${booking_id}
 
 
 /* =====================================================
-   SEND CUSTOMER EMAIL
-   -----------------------------------------------------
-   This email is sent AFTER the owner clicks
-   ACCEPT or REJECT.
+   SEND CUSTOMER EMAIL USING RESEND
+
+   Sent after owner clicks ACCEPT or REJECT.
 ===================================================== */
 
 async function sendCustomerEmail(appointment) {
@@ -906,17 +901,17 @@ async function sendCustomerEmail(appointment) {
 
 
         /* -----------------------------
-           SEND CUSTOMER EMAIL USING GMAIL
+           SEND CUSTOMER EMAIL
         ----------------------------- */
 
         const emailResponse =
-            await transporter.sendMail({
+            await resend.emails.send({
 
                 from:
-                    `Lustre Nail Studio <${process.env.GMAIL_USER}>`,
+                    FROM_EMAIL,
 
                 to:
-                    email,
+                    [email],
 
                 subject:
                     `Lustre Nail Studio - ${statusTitle} - ${booking_id}`,
@@ -942,14 +937,12 @@ ${statusTitle}
 
 </head>
 
-
 <body style="
     margin:0;
     padding:30px 15px;
     background:#f8f3ef;
     font-family:Arial,sans-serif;
 ">
-
 
 <div style="
     max-width:600px;
@@ -958,7 +951,6 @@ ${statusTitle}
     padding:35px;
     border-radius:14px;
 ">
-
 
 <h2 style="
     color:#4a2732;
@@ -970,7 +962,6 @@ Lustre Nail Studio
 
 </h2>
 
-
 <h3 style="
     color:${statusColor};
     text-align:center;
@@ -980,48 +971,39 @@ ${statusTitle}
 
 </h3>
 
-
 <p>
 Hi ${customer_name},
 </p>
-
 
 <p>
 ${mainMessage}
 </p>
 
-
 <hr>
-
 
 <h4>
 Appointment Details
 </h4>
-
 
 <p>
 <strong>Booking ID:</strong>
 ${booking_id}
 </p>
 
-
 <p>
 <strong>Service:</strong>
 ${service}
 </p>
-
 
 <p>
 <strong>Date:</strong>
 ${appointment_date}
 </p>
 
-
 <p>
 <strong>Time:</strong>
 ${appointment_time}
 </p>
-
 
 <p>
 
@@ -1038,20 +1020,16 @@ ${booking_status.toUpperCase()}
 
 </p>
 
-
 <br>
-
 
 <p>
 ${nextMessage}
 </p>
 
-
 <div style="
     text-align:center;
     margin:30px 0;
 ">
-
 
 <a
     href="${statusUrl}"
@@ -1068,12 +1046,9 @@ ${nextMessage}
     VIEW APPOINTMENT STATUS
 </a>
 
-
 </div>
 
-
 <hr>
-
 
 <p style="
     font-size:13px;
@@ -1091,7 +1066,6 @@ Sunday: By appointment
 
 </p>
 
-
 <p style="
     font-size:13px;
     color:#777;
@@ -1102,9 +1076,7 @@ If you have any questions, please contact us.
 
 </p>
 
-
 </div>
-
 
 </body>
 
@@ -1121,12 +1093,32 @@ If you have any questions, please contact us.
         );
 
 
+        if (emailResponse.error) {
+
+            console.error(
+                "Resend customer email error:",
+                emailResponse.error
+            );
+
+            return {
+
+                success: false,
+
+                error:
+                    emailResponse.error.message ||
+                    JSON.stringify(emailResponse.error)
+
+            };
+
+        }
+
+
         return {
 
             success: true,
 
             data:
-                emailResponse
+                emailResponse.data
 
         };
 
@@ -1135,7 +1127,7 @@ If you have any questions, please contact us.
     catch (error) {
 
         console.error(
-            "Customer email error:",
+            "Resend customer email error:",
             error
         );
 
@@ -1372,16 +1364,6 @@ router.get(
                     customerEmailResult.error
                 );
 
-                /*
-                   IMPORTANT:
-
-                   The appointment status has already been
-                   updated successfully.
-
-                   Therefore we do NOT change the appointment
-                   back to pending just because the email failed.
-                */
-
             }
             else {
 
@@ -1430,7 +1412,6 @@ router.get(
 
                 </head>
 
-
                 <body style="
                     margin:0;
                     padding:60px 20px;
@@ -1438,7 +1419,6 @@ router.get(
                     font-family:Arial,sans-serif;
                     text-align:center;
                 ">
-
 
                 <div style="
                     max-width:500px;
@@ -1448,7 +1428,6 @@ router.get(
                     border-radius:14px;
                 ">
 
-
                 <h2 style="
                     color:#4a2732;
                 ">
@@ -1457,7 +1436,6 @@ router.get(
 
                 </h2>
 
-
                 <h3 style="
                     color:${statusColor};
                 ">
@@ -1465,7 +1443,6 @@ router.get(
                     Appointment ${statusText}
 
                 </h3>
-
 
                 <p>
 
@@ -1476,7 +1453,6 @@ router.get(
 
                 </p>
 
-
                 <p>
 
                     Customer:
@@ -1485,7 +1461,6 @@ router.get(
                     </strong>
 
                 </p>
-
 
                 <p>
 
@@ -1496,7 +1471,6 @@ router.get(
 
                 </p>
 
-
                 <p>
 
                     Date:
@@ -1505,7 +1479,6 @@ router.get(
                     </strong>
 
                 </p>
-
 
                 <p>
 
@@ -1516,14 +1489,11 @@ router.get(
 
                 </p>
 
-
                 <br>
-
 
                 <p>
                     The appointment status has been updated successfully.
                 </p>
-
 
                 <p style="
                     font-size:14px;
@@ -1538,9 +1508,7 @@ router.get(
 
                 </p>
 
-
                 </div>
-
 
                 </body>
 
@@ -1663,14 +1631,12 @@ router.get(
 
                 </head>
 
-
                 <body style="
                     margin:0;
                     padding:40px 20px;
                     background:#f8f3ef;
                     font-family:Arial,sans-serif;
                 ">
-
 
                 <div style="
                     max-width:550px;
@@ -1680,7 +1646,6 @@ router.get(
                     border-radius:14px;
                 ">
 
-
                 <h2 style="
                     color:#4a2732;
                 ">
@@ -1689,44 +1654,36 @@ router.get(
 
                 </h2>
 
-
                 <h3>
                     Appointment Status
                 </h3>
 
-
                 <hr>
-
 
                 <p>
                     <strong>Booking ID:</strong>
                     ${appointment.booking_id}
                 </p>
 
-
                 <p>
                     <strong>Customer:</strong>
                     ${appointment.customer_name}
                 </p>
-
 
                 <p>
                     <strong>Service:</strong>
                     ${appointment.service}
                 </p>
 
-
                 <p>
                     <strong>Date:</strong>
                     ${appointment.appointment_date}
                 </p>
 
-
                 <p>
                     <strong>Time:</strong>
                     ${appointment.appointment_time}
                 </p>
-
 
                 <p>
 
@@ -1743,9 +1700,7 @@ router.get(
 
                 </p>
 
-
                 </div>
-
 
                 </body>
 
@@ -1777,7 +1732,7 @@ router.get(
 
 
 /* =====================================================
-   TEST OWNER EMAIL
+   TEST OWNER EMAIL USING RESEND
 ===================================================== */
 
 router.get(
@@ -1787,13 +1742,13 @@ router.get(
         try {
 
             const emailResponse =
-                await transporter.sendMail({
+                await resend.emails.send({
 
                     from:
-                        `Lustre Nail Studio <${process.env.GMAIL_USER}>`,
+                        FROM_EMAIL,
 
                     to:
-                        process.env.OWNER_EMAIL,
+                        [process.env.OWNER_EMAIL],
 
                     subject:
                         "Lustre Nail Studio - Test Email",
@@ -1822,7 +1777,7 @@ router.get(
 
                             <p>
 
-                                Gmail SMTP is working correctly.
+                                Resend email API is working correctly.
 
                             </p>
 
@@ -1839,6 +1794,24 @@ router.get(
             );
 
 
+            if (emailResponse.error) {
+
+                return res.status(500).json({
+
+                    success: false,
+
+                    message:
+                        "Resend failed to send test email.",
+
+                    error:
+                        emailResponse.error.message ||
+                        JSON.stringify(emailResponse.error)
+
+                });
+
+            }
+
+
             return res.json({
 
                 success: true,
@@ -1847,7 +1820,7 @@ router.get(
                     "Test email sent successfully.",
 
                 message_id:
-                    emailResponse.messageId || null
+                    emailResponse.data?.id || null
 
             });
 
@@ -1859,7 +1832,6 @@ router.get(
                 "Test email error:",
                 error
             );
-
 
             return res.status(500).json({
 
