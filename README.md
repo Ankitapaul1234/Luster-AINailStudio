@@ -11,9 +11,8 @@ Pages:
 Shared:
 - css/style.css
 - js/script.js
-- assets/images/ (ready for real images)
+- assets/images/ 
 
 Run by opening `index.html` or using VS Code Live Server.
 Dark mode works across all pages and is saved with localStorage.
 
-Next backend phase: Node.js + Express + MongoDB + real slot availability + owner dashboard + notices + payment verification.
